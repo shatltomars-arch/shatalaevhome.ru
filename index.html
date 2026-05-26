@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мебель на заказ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f6f4f1;
+      color:#1e1e1e;
+      line-height:1.6;
+    }
+
+    .container{
+      width:min(1200px,92%);
+      margin:auto;
+    }
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(12px);
+      background:rgba(246,244,241,.85);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-weight:700;
+      font-size:20px;
+      letter-spacing:.5px;
+    }
+
+    .menu{
+      display:flex;
+      gap:28px;
+    }
+
+    .menu a{
+      text-decoration:none;
+      color:#222;
+      font-weight:500;
+    }
+
+    .hero{
+      min-height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80') center/cover;
+      display:flex;
+      align-items:center;
+      color:#fff;
+    }
+
+    .hero-content{
+      max-width:700px;
+    }
+
+    .hero h1{
+      font-size:clamp(42px,6vw,74px);
+      line-height:1.05;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:20px;
+      opacity:.95;
+      margin-bottom:32px;
+    }
+
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:32px;
+    }
+
+    .btn{
+      padding:16px 26px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.2s;
+      display:inline-block;
+    }
+
+    .btn-dark{
+      background:#1e1e1e;
+      color:#fff;
+    }
+
+    .btn-light{
+      background:#fff;
+      color:#1e1e1e;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+
+    .trust{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      font-size:15px;
+    }
+
+    section{
+      padding:100px 0;
+    }
+
+    h2{
+      font-size:42px;
+      margin-bottom:16px;
+    }
+
+    .subtitle{
+      color:#666;
+      margin-bottom:40px;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:28px;
+      padding:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .card h3{
+      margin:14px 0;
+    }
+
+    .portfolio{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px;
+    }
+
+    .project{
+      border-radius:30px;
+      overflow:hidden;
+      position:relative;
+      min-height:360px;
+      background:#ddd;
+    }
+
+    .project img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .project-title{
+      position:absolute;
+      bottom:20px;
+      left:20px;
+      background:rgba(0,0,0,.55);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:999px;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:20px;
+    }
+
+    .step{
+      text-align:center;
+    }
+
+    .step-number{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      background:#1e1e1e;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0 auto 16px;
+      font-size:22px;
+      font-weight:700;
+    }
+
+    .advantages{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:18px;
+    }
+
+    .adv-item{
+      background:#fff;
+      padding:24px;
+      border-radius:22px;
+    }
+
+    .contact-box{
+      background:#1f1f1f;
+      color:#fff;
+      border-radius:36px;
+      padding:50px;
+    }
+
+    form{
+      display:grid;
+      gap:16px;
+      margin-top:30px;
+    }
+
+    input, textarea{
+      padding:18px;
+      border-radius:18px;
+      border:none;
+      font-family:inherit;
+      font-size:16px;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      color:#666;
+    }
+
+    @media(max-width:768px){
+      .menu{display:none}
+      h2{font-size:34px}
+      .hero p{font-size:18px}
+      .contact-box{padding:32px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">ИЛЬЯ | МЕБЕЛЬ</div>
+      <div class="menu">
+        <a href="#services">Услуги</a>
+        <a href="#portfolio">Проекты</a>
+        <a href="#steps">Этапы</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Мебель на заказ.<br>Продуманные решения под ваш интерьер</h1>
+      <p>Проектирование, производство и установка мебели по индивидуальным размерам.</p>
+
+      <div class="buttons">
+        <a href="#portfolio" class="btn btn-light">Смотреть проекты</a>
+        <a href="https://wa.me/79999999999" class="btn btn-dark">WhatsApp</a>
+      </div>
+
+      <div class="trust">
+        <span>✓ Индивидуальные размеры</span>
+        <span>✓ Нестандартные решения</span>
+        <span>✓ Современные материалы</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2>Чем я занимаюсь</h2>
+    <p class="subtitle">От идеи до готового результата</p>
+
+    <div class="grid-4">
+      <div class="card"><h3>🍽 Кухни</h3><p>Функциональные кухни под размеры помещения.</p></div>
+      <div class="card"><h3>🚪 Шкафы</h3><p>Встроенные и отдельно стоящие решения.</p></div>
+      <div class="card"><h3>📐 Проектирование</h3><p>Продуманная эргономика и точные размеры.</p></div>
+      <div class="card"><h3>🛠 Нестандартные проекты</h3><p>Сложные помещения и индивидуальные задачи.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <h2>Мои проекты</h2>
+    <p class="subtitle">Лучшие работы и реальные проекты</p>
+
+    <div class="portfolio">
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80">
+        <div class="project-title">Современная кухня</div>
+      </div>
+
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
+        <div class="project-title">Шкаф-купе</div>
+      </div>
+
+      <div class="project">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
+        <div class="project-title">Гардеробная</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="steps">
+  <div class="container">
+    <h2>Как проходит работа</h2>
+
+    <div class="steps">
+      <div class="step"><div class="step-number">1</div>Заявка</div>
+      <div class="step"><div class="step-number">2</div>Обсуждение</div>
+      <div class="step"><div class="step-number">3</div>Проект</div>
+      <div class="step"><div class="step-number">4</div>Производство</div>
+      <div class="step"><div class="step-number">5</div>Установка</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Почему мне доверяют</h2>
+
+    <div class="advantages">
+      <div class="adv-item">✓ Работа по размерам помещения</div>
+      <div class="adv-item">✓ Точное проектирование</div>
+      <div class="adv-item">✓ Контроль деталей</div>
+      <div class="adv-item">✓ Современные материалы</div>
+      <div class="adv-item">✓ Индивидуальный подход</div>
+      <div class="adv-item">✓ Нестандартные решения</div>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="container">
+    <div class="contact-box">
+      <h2>Обсудим ваш проект</h2>
+      <p>Напишите, что хотите сделать — обсудим задачу.</p>
+
+      <form>
+        <input type="text" placeholder="Ваше имя">
+        <input type="text" placeholder="Телефон или Telegram">
+        <textarea rows="5" placeholder="Что нужно сделать"></textarea>
+        <button class="btn btn-light">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 — Мебель на заказ
+</footer>
+
+</body>
+</html>
