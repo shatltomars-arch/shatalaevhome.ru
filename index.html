@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Шаталаев | Мебель на заказ</title>
+  <title>Мебель на заказ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,11 +16,6 @@
       background:#f6f4f1;
       color:#1e1e1e;
       line-height:1.6;
-    }
-
-    /* Фикс для якорей: теперь контент не будет прятаться под шапкой */
-    section {
-      scroll-margin-top: 80px;
     }
 
     .container{
@@ -60,21 +55,16 @@
       text-decoration:none;
       color:#222;
       font-weight:500;
-      transition: color 0.2s;
-    }
-    .menu a:hover {
-      color: #666;
     }
 
     .hero{
       min-height:100vh;
       background:
-      linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80') center/cover;
+      linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+      url('https://picsum.photos/id/20/1600/900') center/cover;
       display:flex;
       align-items:center;
       color:#fff;
-      margin-top: 0;
     }
 
     .hero-content{
@@ -107,10 +97,6 @@
       font-weight:600;
       transition:.2s;
       display:inline-block;
-      cursor: pointer;
-      border: none;
-      font-family: inherit;
-      font-size: 1rem;
     }
 
     .btn-dark{
@@ -123,7 +109,7 @@
       color:#1e1e1e;
     }
 
-    .btn:hover{transform:translateY(-2px); opacity: 0.9;}
+    .btn:hover{transform:translateY(-2px)}
 
     .trust{
       display:flex;
@@ -133,7 +119,7 @@
     }
 
     section{
-      padding:80px 0;
+      padding:100px 0;
     }
 
     h2{
@@ -175,28 +161,22 @@
       position:relative;
       min-height:360px;
       background:#ddd;
-      cursor: pointer;
     }
 
     .project img{
       width:100%;
       height:100%;
       object-fit:cover;
-      transition: transform 0.4s ease;
-    }
-    .project:hover img {
-      transform: scale(1.03);
     }
 
     .project-title{
       position:absolute;
       bottom:20px;
       left:20px;
-      background:rgba(0,0,0,.65);
+      background:rgba(0,0,0,.55);
       color:#fff;
       padding:10px 16px;
       border-radius:999px;
-      font-weight: 500;
     }
 
     .steps{
@@ -254,12 +234,6 @@
       border:none;
       font-family:inherit;
       font-size:16px;
-      background: #fff;
-      outline: none;
-      transition: 0.2s;
-    }
-    input:focus, textarea:focus {
-      box-shadow: 0 0 0 2px #ccc;
     }
 
     footer{
@@ -268,25 +242,11 @@
       color:#666;
     }
 
-    /* Сообщение после отправки формы */
-    .form-message {
-      margin-top: 16px;
-      padding: 12px;
-      border-radius: 16px;
-      background: #2a6e3b;
-      color: white;
-      text-align: center;
-      font-size: 14px;
-    }
-
     @media(max-width:768px){
       .menu{display:none}
       h2{font-size:34px}
       .hero p{font-size:18px}
       .contact-box{padding:32px}
-      section {
-        padding: 60px 0;
-      }
     }
   </style>
 </head>
@@ -351,17 +311,17 @@
 
     <div class="portfolio">
       <div class="project">
-        <img src="https://images.unsplash.com/photo-1556911220-bda9f5f7597e?auto=format&fit=crop&w=1200&q=80" alt="Современная кухня">
+        <img src="https://picsum.photos/id/133/800/600" alt="Современная кухня">
         <div class="project-title">Современная кухня</div>
       </div>
 
       <div class="project">
-        <img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=1200&q=80" alt="Шкаф-купе">
+        <img src="https://picsum.photos/id/113/800/600" alt="Шкаф-купе">
         <div class="project-title">Шкаф-купе</div>
       </div>
 
       <div class="project">
-        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80" alt="Гардеробная">
+        <img src="https://picsum.photos/id/143/800/600" alt="Гардеробная">
         <div class="project-title">Гардеробная</div>
       </div>
     </div>
@@ -403,13 +363,12 @@
       <h2>Обсудим ваш проект</h2>
       <p>Напишите, что хотите сделать — обсудим задачу.</p>
 
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Ваше имя" required>
-        <input type="text" id="contact" placeholder="Телефон или Telegram" required>
-        <textarea id="message" rows="5" placeholder="Что нужно сделать" required></textarea>
-        <button type="submit" class="btn btn-light">Отправить заявку</button>
+      <form>
+        <input type="text" placeholder="Ваше имя">
+        <input type="text" placeholder="Телефон или Telegram">
+        <textarea rows="5" placeholder="Что нужно сделать"></textarea>
+        <button class="btn btn-light">Отправить заявку</button>
       </form>
-      <div id="formStatus" style="margin-top: 20px;"></div>
     </div>
   </div>
 </section>
@@ -417,34 +376,6 @@
 <footer>
   © 2026 — Мебель на заказ
 </footer>
-
-<script>
-  // Простая обработка отправки формы (без реальной отправки на сервер)
-  const form = document.getElementById('contactForm');
-  const statusDiv = document.getElementById('formStatus');
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const contact = document.getElementById('contact').value;
-    const message = document.getElementById('message').value;
-
-    // Показываем сообщение, что заявка получена
-    statusDiv.innerHTML = '<div class="form-message">✅ Спасибо! Я свяжусь с вами в ближайшее время.</div>';
-    
-    // Очищаем форму
-    form.reset();
-    
-    // Через 5 секунд убираем сообщение
-    setTimeout(() => {
-      statusDiv.innerHTML = '';
-    }, 5000);
-
-    // Здесь вы можете добавить код для реальной отправки на ваш email или в Telegram
-    // Например, через сервис Formspree: добавить action="https://formspree.io/f/ваш_ид" в тег <form>
-  });
-</script>
 
 </body>
 </html>
